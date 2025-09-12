@@ -1,0 +1,86 @@
+<!-- image_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uploaded Images</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tr:hover {
+            background: #f1f1f1;
+        }
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+                width: 100%;
+            }
+            th {
+                display: none;
+            }
+            td {
+                text-align: left;
+                padding-left: 50%;
+                position: relative;
+            }
+            td:before {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 45%;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            td:nth-of-type(1):before { content: "ID"; }
+            td:nth-of-type(2):before { content: "Folder"; }
+            td:nth-of-type(3):before { content: "Image"; }
+            td:nth-of-type(4):before { content: "Uploaded At"; }
+        }
+    </style>
+</head>
+<body>
+    <h2>📸 Uploaded Images</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Folder</th>
+                <th>Image</th>
+                <th>Uploaded At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for img in images %}
+            <tr>
+                <td>{{ img.id }}</td>
+                <td>{{ img.Name }}</td>
+                <td><img src="{{ MEDIA_URL }}{{ img }}" ></td>
+                <td>{{ img.Class }}</td>
+            </tr>
+                {{ MEDIA_URL }}{{ img }}
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

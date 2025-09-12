@@ -1,0 +1,110 @@
+{% load static %}
+<html>
+    <head>
+        <title>new class database</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css_file/today_att_style.css' %}">
+        <!--<link rel="stylesheet" href="C:\Users\Pc\Desktop\CS\ai attendance\attendance\static\css_file\today_att_style.css">-->
+          <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto; /* Enables horizontal scroll on small screens */
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background: white;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 800px; /* Ensures table scrolls on smaller screens */
+    }
+    th, td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 8px;
+      white-space: nowrap; /* Prevents text from breaking */
+    }
+    th {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+    tr:hover {
+      background: #dff0d8;
+      transition: 0.3s;
+    }
+    td:first-child {
+      font-weight: bold;
+      background: #f1f1f1;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+    }
+    td:last-child, th:last-child {
+      background: #ffe0b2;
+      font-weight: bold;
+    }
+  </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">TODAY ATTENDANCE</div>
+        </nav>
+        <section class="date_class">
+            <img style="width: 150px; height: 100px;" src="https://cdn-icons-png.flaticon.com/128/2948/2948239.png">
+            <div style="display: flex; align-items: center;">Class
+                <div class="date_class_board">
+                    <img class="img" src="https://cdn-icons-png.flaticon.com/128/16452/16452723.png" >
+                    <div id="date_class_num"></div>
+                </div>
+                <select class="date_class_select" onchange="stu_class(this)">
+                    <option></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+        </section>
+        <h2>📅 Student Attendance Sheet</h2>
+        <div class="table-container">
+            <table>
+            <tr> <th>Name</th> </tr>
+            </table>
+        </div>
+
+        <script>
+            function stu_class(num) {
+                document.getElementById('date_class_num').innerHTML = num.value
+            }
+
+            row=document.querySelector('tr')
+            for (let index = 1; index <= 31; index++) {
+                col = document.createElement('th')
+                content = document.createTextNode(index)
+                col.appendChild(content)
+                row.appendChild(col)
+            }
+            col = document.createElement('th')
+            content = document.createTextNode('Total Attendance')
+            col.appendChild(content)
+            row.appendChild(col)
+        </script>
+    </body>
+</html>

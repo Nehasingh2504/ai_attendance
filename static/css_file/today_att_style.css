@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* navigation */
+nav{
+    background-color: black;
+    box-shadow: 0px 4px 5px orangered;
+}
+nav .logo{
+    font: italic small-caps 600 20px cursive;
+    color: white;
+    padding: 8px 30px;
+}
+
+/*date and class*/
+/*.date_class{
+    display: flex;
+    justify-content: space-between;
+    font: italic small-caps 600 30px cursive;
+    align-items: center;
+    padding: 1% 5% 1% 5%;
+    position: relative;
+}
+
+.date_class_board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100;
+    height: fit-content;
+}
+
+.img{
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    z-index: 1;
+}
+#date_class_num{
+    position: absolute;
+    z-index: 2;
+}
+
+.table_row{
+    border: 2px solid black;
+    width: 90px;
+    height: 25px;
+    overflow: auto;
+}
+
+#table{
+    border-collapse: collapse;
+}
+
+.table_block{
+    overflow: auto;
+    margin-top: 2%;
+    padding: 1%;
+}*/
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto; /* Enables horizontal scroll on small screens */
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background: white;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 800px; /* Ensures table scrolls on smaller screens */
+    }
+    th, td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 8px;
+      white-space: nowrap; /* Prevents text from breaking */
+    }
+    th {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+    tr:hover {
+      background: #dff0d8;
+      transition: 0.3s;
+    }
+    td:first-child {
+      font-weight: bold;
+      background: #f1f1f1;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+    }
+    td:last-child, th:last-child {
+      background: #ffe0b2;
+      font-weight: bold;
+    }

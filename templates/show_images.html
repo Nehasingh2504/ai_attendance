@@ -1,0 +1,13 @@
+<table border="1">
+    <tr>
+        <th>Photo</th>
+    </tr>
+    {% for img in images %}
+    <tr>
+        <td>
+            <img src="{{ img.Photo.url }}" width="120">
+        </td>
+    </tr>
+    {{ img.Photo.url }}
+    {% endfor %}
+</table>

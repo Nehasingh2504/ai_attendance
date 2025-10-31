@@ -14,12 +14,12 @@ Perfect for schools, colleges, and offices looking for a simple, smart, and auto
 
 ## 🚀 Features
 
-✅ Real-time face detection and recognition using OpenCV
-✅ Option to upload student images for attendance marking
-✅ Create and manage multiple classes (each with its own database)
-✅ Store student details, attendance records, and class info separately
-✅ Responsive and easy-to-use web interface
-✅ Attendance dashboard with daily and overall summaries
+- ✅ Real-time face detection and recognition using OpenCV
+- ✅ Option to upload student images for attendance marking
+- ✅ Create and manage multiple classes (each with its own database)
+- ✅ Store student details, attendance records, and class info separately
+- ✅ Responsive and easy-to-use web interface
+- ✅ Attendance dashboard with daily and overall summaries
 
 ---
 

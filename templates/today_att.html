@@ -1,0 +1,107 @@
+{% load static %}
+<html>
+    <head>
+        <title>new class database</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css_file/today_att_style.css' %}">
+        <!--<link rel="stylesheet" href="C:\Users\Pc\Desktop\CS\ai attendance\attendance\static\css_file\today_att_style.css">-->
+    </head>
+    <body>
+      <nav>
+        <div class="logo">TODAY ATTENDANCE</div>
+      </nav>
+
+      <!-- Top bar with heading + controls -->
+      <div class="top-bar">
+        <h2>📅 Student Attendance Sheet</h2>
+        
+        <div class="controls">
+          <!-- Date Picker -->
+          <div class="control-box">
+            <img src="https://cdn-icons-png.flaticon.com/128/747/747310.png" alt="calendar">
+            <label for="attendance_date">Date:</label>
+            <input type="date" id="attendance_date">
+          </div>
+
+          <!-- Class Dropdown -->
+          <div class="control-box">
+            <img src="https://cdn-icons-png.flaticon.com/128/3135/3135755.png" alt="class">
+            <label for="class_select">Class:</label>
+            <select id="class_select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+        <div class="table-container">
+            <table>
+            <tr> <th>Name</th> </tr>
+            <tr>
+            <td>John</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>P</td><td>A</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>A</td><td>22</td>
+            </tr>
+            <tr>
+            <td>Sopia</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>P</td><td>A</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>A</td><td>25</td>
+            </tr>
+            <tr>
+            <td>Max</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>P</td><td>A</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>A</td><td>19</td>
+            </tr>
+            <tr>
+            <td>Ava</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>P</td><td>A</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>A</td><td>15</td>
+            </tr>
+            <tr>
+            <td>Mia</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>P</td><td>A</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>A</td>
+            <td>P</td><td>A</td><td>P</td><td>P</td><td>P</td>
+            <td>A</td><td>P</td><td>P</td><td>A</td><td>P</td>
+            <td>A</td><td>15</td>
+            </tr>
+            </table>
+        </div>
+
+        <script>
+            row=document.querySelector('tr')
+            for (let index = 1; index <= 31; index++) {
+                col = document.createElement('th')
+                content = document.createTextNode(index)
+                col.appendChild(content)
+                row.appendChild(col)
+            }
+            col = document.createElement('th')
+            content = document.createTextNode('Total Attendance')
+            col.appendChild(content)
+            row.appendChild(col)
+        </script>
+    </body>
+</html>

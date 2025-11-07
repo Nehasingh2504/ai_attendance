@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css_file\registered_stu.css' %}">
+  <style>
+    .control_back{
+      text-decoration: none;
+      background: linear-gradient(90deg, #ff6a95, #ff9472);
+      color: #fff; 
+      border: none; 
+      box-shadow: 0 8px 10px rgba(23, 12, 15, 0.4);
+      transition: transform 0.3s;
+    }
+    .control_back:hover {
+      transform: scale(1.1); /* zoom in */
+    }
+  </style>
+</head>
+<body>
+      <div class="top-bar">
+        <h2>🎓 Student Profiles</h2>
+        {{file}}
+        <div class="controls">
+          <a href="../register_stuform" style="text-decoration: none;"><button class="control-box control_back">ADD STUDENT</button></a>
+      
+          <!-- Class Dropdown -->
+          <div class="control-box">
+            <img src="https://cdn-icons-png.flaticon.com/128/3135/3135755.png" alt="class">
+            <label for="class_select">Class:</label>
+            <form action="../registered_stu" method="post">
+              {% csrf_token %}
+              <button id="btn" name="btn"></button>
+            </form>
+            <select id="class_select" onchange="select_class(this)">
+              <option>select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Sno.</th>
+          <th>id</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Class</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+            {% for img in images %}
+            <tr>
+                <td>{{ forloop.counter }}</td> <!--{{ forloop.counter }}-->
+                <td>{{img.id}}</td>
+                <td>{{ img.Name }}</td>
+                <td><img src="{{img.Photo.url}}"></td>
+                <td>{{ img.Class }}</td>
+                <td>
+                  <form action="../deleterow" method="post">
+                    {% csrf_token %}
+                    <button id="{{img.id}}" name="stu_id" value="{{img.id}}"></button>
+                    <input name="class" value="{{ img.Class }}">
+                  </form>
+                  <img src="https://cdn-icons-png.flaticon.com/128/11540/11540197.png" name="{{img.id}}" onclick="document.getElementById(this.name).click()" style="border: none;">
+                </td>
+            </tr>
+            {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function select_class(val) {
+      console.log(val.value)
+      class_btn=document.getElementById('btn')
+      class_btn.value = val.value
+      class_btn.click()
+    }
+  </script>
+</body>
+</html>

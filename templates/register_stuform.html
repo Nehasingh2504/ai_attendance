@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Stylish Upload Form</title>
+  <link rel="stylesheet" href="{% static 'css_file/register_style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="logo">NEW CLASS</div>
+    </nav>
+    {% if messages %}
+    {% for message in messages %}
+        <p style="color:#fff; background-color:#dc3545; border-color:#dc3545; display: flex; justify-content: center; align-items: center;">
+        {{ message }}
+        </p>
+    {% endfor %}
+    {% endif %}
+    <div class="form-container">
+        <form class="form" method="POST" action="../new_classdb" enctype="multipart/form-data">  <!-- its important to write 'enctype="multipart/form-data"' if file is send otherwise file doesn't save-->
+            {% csrf_token %}
+            <h2>Upload Your File</h2>
+            <label for="name">Class</label>
+            <select id="select" style="width: 97%;" name="class">
+                <option>Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+
+            <label>Choose File</label>
+            <input type="file" id="file" name="myfile">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

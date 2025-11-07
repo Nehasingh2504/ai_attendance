@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>attendance</title>
+        <link rel="stylesheet" href="{% static 'css_file/home_style.css' %}">
+        <!--<link rel="stylesheet" href="C:\Users\Pc\Desktop\CS\ai attendance\attendance\static\css_file\home_style.css">-->
+    </head>
+    <body>
+        <nav>
+            <div class="logo">AI ATTENDANCE MANAGEMENT</div>
+        </nav>
+
+        <section>
+            <div class="section-grid">
+                <a href="/take_att" style="text-decoration: none;"><div class="section-card card1">
+                    <p>Take Attendance</p>
+                </div></a>
+                <a href="/registered_stu" style="text-decoration: none;"><div class="section-card card2">
+                    <p>Register New Student</p>
+                </div></a>
+                <a href="/today_att" style="text-decoration: none;"><div class="section-card card3">
+                    <p>Today attendance</p>
+                </div></a>
+                <a href="/new_classdb" style="text-decoration: none;"><div class="section-card card4">
+                    <p>New Class Database</p>
+                </div></a>
+            </div>
+        </section>
+
+    </body>
+</html>

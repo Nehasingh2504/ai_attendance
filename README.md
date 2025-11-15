@@ -6,9 +6,12 @@
 
 ## 🔎 Project Overview
 
-An **AI-powered Attendance Management System** built using **Django**, **OpenCV**, and modern front-end tools (**HTML**, **CSS**, **JavaScript**). The system supports both **real-time face detection** via webcam and **manual photo uploads** to mark attendance. It also allows creating **separate databases for each class**, maintaining student details and attendance records independently.
+An **AI-powered Attendance Management System** built using **Django**, **OpenCV**, **Face Recognition**, and modern front-end tools (HTML, CSS, JavaScript).
 
-Perfect for schools, colleges, and offices looking for a simple, smart, and automated attendance solution.
+The system supports real-time face detection using OpenCV and automatic face recognition to identify students/employees instantly. Attendance can be marked through live webcam scanning or by uploading a photo manually.
+
+It also allows creating separate databases for each class, keeping student details and attendance records organized and independent.
+Perfect for schools, colleges, coaching centers, and offices looking for a simple, smart, and fully automated attendance solution.
 
 ---
 

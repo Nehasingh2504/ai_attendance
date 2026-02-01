@@ -6,7 +6,7 @@
 
 ## 🔎 Project Overview
 
-An **AI-powered Attendance Management System** built using **Node.js**, **OpenCV**, **Face Recognition**, and modern front-end tools (HTML, CSS, JavaScript).
+An **AI-powered Attendance Management System** built using **Node.js**, **Express**, integrating a **Face Recognition API** for real-time student identification through a webcam and modern front-end tools (HTML, CSS, JavaScript).
 
 The system supports real-time face detection using OpenCV and automatic face recognition to identify students/employees instantly. Attendance can be marked through live webcam scanning or by uploading a photo manually.
 

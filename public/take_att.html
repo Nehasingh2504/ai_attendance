@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>new class database</title>
+    <link rel="stylesheet" type="text/css" href="take_att_style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">AI ATTENDANCE MANAGEMENT</div>
+    </nav>
+    <!--{% if messages %}
+    {% for message in messages %}
+    <p
+        style="color:#fff; background-color:#dc3545; border-color:#dc3545; display: flex; justify-content: center; align-items: center;">
+        {{ message }}
+    </p>
+    {% endfor %}
+    {% endif %}-->
+    <div class="container">
+        <!-- Left Side: Video/Attendance Display -->
+        <div class="left-box">
+            <h2>Live Attendance Capture</h2>
+            <h3>Processed Image:</h3>
+            <div id="video-wrapper" style="position: relative; width: 640px; height: 400px; margin: auto;">
+                <video id="video" width="640" height="400" autoplay muted
+                    style="position: absolute; top: 0; left: 0;"></video>
+            </div>
+        </div>
+
+        <!-- Right Side: Upload Section -->
+        <div class="right-box bdr">
+            <div class="main-control">
+                <div class="control-box">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135755.png" alt="class">
+                    <label for="class_select">Class:</label>
+                    <form>
+                        <button name="btn" style="display: none;"></button>
+                    </form>
+                    <select id="class_select">
+                        <option>select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+
+                </div>
+            </div>
+            <h2>Upload Attendance File</h2>
+            <form method="POST" enctype="multipart/form-data" class="form">
+                <input type="file" name="myfile" id="fileInput">
+                <button type="submit" id="btn" style="display: none;">Upload</button>
+            </form>
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                <img style="width: 18%; margin-right: 10px;"
+                    src="https://cdn-icons-png.flaticon.com/128/159/159626.png"> Upload File
+            </button>
+            <div id="student-list">
+                <h3>Marked Students</h3>
+                <div class="student-item">
+                    <span>John Doe</span>
+                    <span class="status-present">Present</span>
+                </div>
+                <div class="student-item">
+                    <span>Jane Smith</span>
+                    <span class="status-absent">Absent</span>
+                </div>
+            </div>
+            <pre id="output"></pre>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 AI Attendance Management System
+    </footer>
+    <script src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="take_att.js"></script>
+    <script>
+        fileName = document.getElementById('fileName');
+        button = document.getElementById('btn')
+
+        fileInput.addEventListener('change', function () {
+            document.getElementById('btn').click()
+        });
+    </script>
+</body>
+
+</html>

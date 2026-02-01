@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="registered_stu.css">
+  <style>
+    .control_back {
+      text-decoration: none;
+      background: linear-gradient(90deg, #ff6a95, #ff9472);
+      color: #fff;
+      border: none;
+      box-shadow: 0 8px 10px rgba(23, 12, 15, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .control_back:hover {
+      transform: scale(1.1);
+      /* zoom in */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <h2>🎓 Student Profiles</h2>
+    <div class="controls">
+      <a href="register_stuform.html" style="text-decoration: none;"><button class="control-box control_back">ADD
+          STUDENT</button></a>
+
+      <!-- Class Dropdown -->
+      <div class="control-box">
+        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135755.png" alt="class">
+        <label for="class_select">Class:</label>
+        <form action="../registered_stu" method="post">
+          <button id="btn" name="btn"></button>
+        </form>
+        <select id="class_select" onchange="select_class(this)">
+          <option>select</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Sno.</th>
+          <th>id</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Class</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <script>
+    function select_class(val) {
+      class_btn = document.getElementById('btn')
+      class_btn.value = val.value
+      class_btn.click()
+    }
+    const params = new URLSearchParams(window.location.search)
+    const stuclass = params.get('class')
+
+    fetch(`/get-table/${stuclass}`)
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector('tbody')
+
+        data.forEach(stu => {
+          const row = document.createElement('tr')
+
+          row.innerHTML = `
+          <td>${stu.id}</td> 
+          <td>${stu.id}</td>
+          <td>${stu.student_name}</td>
+          <td><img src="/${stu.image_path}"></td>
+          <td>${stuclass}</td>
+          <td>
+            <form action="/deleterow" method="post">
+              <button id="${stu.id}" name="stu_id" value="${stu.id}" onclick="alert('ARE YOU SURE!! you want to DELECT this record')"></button>
+              <input name="class" value="${stuclass}">
+            </form>
+            <img src="https://cdn-icons-png.flaticon.com/128/11540/11540197.png" name="${stu.id}"
+              onclick="document.getElementById(this.name).click()" style="border: none;">
+          </td>
+        `
+          tbody.appendChild(row)
+        })
+      })
+  </script>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ Perfect for schools, colleges, coaching centers, and offices looking for a simpl
 
 ## 🚀 Features
 
-- ✅ Real-time face detection and recognition using OpenCV
+- ✅ Real-time face detection and recognition using API
 - ✅ Option to upload student images for attendance marking
 - ✅ Create and manage multiple classes (each with its own database)
 - ✅ Store student details, attendance records, and class info separately
@@ -28,8 +28,8 @@ Perfect for schools, colleges, coaching centers, and offices looking for a simpl
 
 ## 🧩 Tech Stack
 
-* **Backend:** node.js
-* **Computer Vision:** OpenCV (face detection and recognition)
+* **Backend:** Express
+* **Computer Vision:** face detection and recognition
 * **Frontend:** HTML5, CSS3, JavaScript
 * **Database:** SQLite (per-class database creation)
 
@@ -53,44 +53,10 @@ Perfect for schools, colleges, coaching centers, and offices looking for a simpl
 
 ---
 
-<!-----
-
-## 📁 Project Structure
-
-```
-ai-attendance/
-├─ attendance/              # Main Django app
-│  ├─ migrations/
-│  ├─ models.py              # Student, Class, AttendanceRecord
-│  ├─ views.py
-│  ├─ urls.py
-│  ├─ forms.py
-│  └─ templates/
-│     ├─ index.html
-│     ├─ upload.html         # Upload image for attendance
-│     └─ dashboard.html
-├─ static/
-│  ├─ css/
-│  ├─ js/
-│  └─ images/
-├─ database_manager/         # Handles class-specific DB creation
-│  ├─ create_db.py
-│  ├─ switch_db.py
-├─ recognition/              # Face recognition utilities
-│  ├─ capture_realtime.py
-│  ├─ recognize.py
-│  ├─ train.py
-│  └─ upload_recognition.py
-├─ manage.py
-└─ README.md
-```-->
-
----
-
 ## 🎥 Real-time Recognition Mode
 
 * System captures video feed from webcam.
-* Detects faces using OpenCV.
+* Detects faces using API.
 * Recognizes registered students using trained model.
 * Marks attendance instantly in the class database.
 
